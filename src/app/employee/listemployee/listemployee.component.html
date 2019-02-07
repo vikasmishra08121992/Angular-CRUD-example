@@ -1,0 +1,55 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+
+
+ <div class="row">
+
+       <div class='col-md-2'>
+        <a [routerLink]="['/departmentWise']"> 
+        Department Wise employee salary high
+      </a>
+      </div>
+ </div>
+
+    <div class="row">
+
+       <div class='col-md-2'>
+        <a [routerLink]="['/highjan']"> 
+        salary greter than 5000 in jan
+      </a>
+      </div>
+      
+       <div class='col-md-4'>
+           <a [routerLink]="['/addEmployee']">
+               ADD Employee 
+              </a>
+      </div>
+      </div>
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='employees && employees.length'>
+        <thead>
+          <tr>
+          <th>Employee  ID</th>
+            <th>Employee Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let employee of employees'>
+            <td> {{employee.empId || employee[0] }}
+            </td> 
+            <td>  <a [routerLink]="['/employee', employee.empId || employee[0]]"> {{employee.employeeName || employee[5]}} </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

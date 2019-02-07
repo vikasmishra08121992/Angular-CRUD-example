@@ -1,0 +1,54 @@
+<div class='card'>
+  <div class='card-header'>
+   Add Employee
+  </div>
+  <div class='card-body'>
+
+ <div class='col-md-8'>
+
+  <div class='row'>
+          <div class='col-md-4'> DeptID :</div>
+          <div class='col-md-8'>
+             <input type='text' name ="deptId"  [(ngModel)]='deptId'/></div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'> Employee Name :</div>
+          <div class='col-md-8'> <input type='text' name ="employeeName"  [(ngModel)]='employeeName'/></div>
+        </div>
+
+          <div class='row'>
+          <div class='col-md-4'> address</div>
+          <div class='col-md-8'> <input type='text' name ="address"  [(ngModel)]='address'/></div>
+        </div>
+
+          <div class='row'>
+          <div class='col-md-4'> email</div>
+          <div class='col-md-8'> <input type='text' name ="email"  [(ngModel)]='email'/></div>
+        </div>
+
+          <div class='row'>
+          <div class='col-md-4'> phone</div>
+          <div class='col-md-8'> <input type='text' name ="phone"  [(ngModel)]='phone'/></div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-4'> City</div>
+          <div class='col-md-8'> <input type='text' name ="city"  [(ngModel)]='city'/></div>
+        </div>
+
+
+</div>
+      </div>
+
+        <div class='card-footer'> 
+         <div class='row'>
+          <div class='col-md-4'></div>
+          <div class='col-md-8'>
+ <button class='btn btn-outline-secondary'
+            (click)='save()'
+            style='width:80px'>
+      <i class='fa'></i> Save
+    </button>
+          </div>
+        </div>
+  </div>

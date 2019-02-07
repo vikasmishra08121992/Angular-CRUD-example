@@ -1,0 +1,52 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+    
+ <div class='row'>
+      <div class='col-md-2'>Department with Highest Employee:</div>
+      <div class='col-md-4'>
+        <b>  {{maxEmployeeDepart[0]}}</b>
+      </div>
+        <div class='col-md-4'>
+           <a [routerLink]="['/addDepartment']">
+               ADD DEPARTMENT 
+              </a>
+      </div>
+    </div>
+
+    maxEmployeeDepart
+
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='departments && departments.length'>
+        <thead>
+          <tr>
+          <th>Department ID</th>
+            <th>Department Name</th>
+             <th>No of Employee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let department of departments'>
+            <td> {{department[2]}}
+            </td> 
+            <td>  <a [routerLink]="['/department', department[2]]"> {{department[1]}} </a>
+            </td>
+            <td> 
+                <a [routerLink]="['/employeeDepartment', department[2]]">
+                {{department[0]}}
+              </a>
+             
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

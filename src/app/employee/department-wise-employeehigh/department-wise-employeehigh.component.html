@@ -1,0 +1,35 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='employees && employees.length'>
+        <thead>
+          <tr>
+          <th>Employee  ID</th>
+            <th>Employee Name</th>
+            <th> Department Name</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let employee of employees'>
+            <td> {{employee.empId || employee[0] }}
+            </td> 
+            <td>  <a [routerLink]="['/employee', employee.empId || employee[0]]"> {{employee.employeeName || employee[1]}} </a>
+            </td>
+            <td> {{employee[3]}}</td>
+            <td>  {{employee[2]}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

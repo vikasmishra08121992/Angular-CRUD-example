@@ -1,0 +1,26 @@
+<div class='card'>
+  <div class='card-header'>
+   Add Department
+  </div>
+  <div class='card-body'>
+
+ <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'> Department Name :</div>
+          <div class='col-md-8'> <input type='text' name ="departmentName"  [(ngModel)]='departmentName'/></div>
+        </div>
+</div>
+      </div>
+
+        <div class='card-footer'> 
+         <div class='row'>
+          <div class='col-md-4'></div>
+          <div class='col-md-8'>
+ <button class='btn btn-outline-secondary'
+            (click)='save()'
+            style='width:80px'>
+      <i class='fa'></i> Save
+    </button>
+          </div>
+        </div>
+  </div>
